@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>StoreGO- My Cart</title>
+    <!-- Purpose CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" id="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/purpose.css' %}" id="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" id="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/storego.css' %}" id="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}" id="stylesheet">
+</head>
+
+
+<body>
+<header class="header inner-page" id="header-main">
+        <!-- Main navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg navbar-transparent" id="navbar-main">
+            <div class="container px-lg-0">
+                <!-- Logo -->
+                <a class="navbar-brand mr-lg-5" href="{% url 'home'%}">
+                    <img alt="Image placeholder" src="{% static 'img/storego-image1.png' %}" id="navbar-logo">
+                </a>
+                <!-- Navbar collapse trigger -->
+                <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+                <!-- Navbar nav -->
+                <div class="collapse navbar-collapse" id="navbar-main-collapse">
+                    <ul class="navigation-menu align-items-lg-center">
+                        <!-- Home - Overview  -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Shop</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'product' %}">Products</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav align-items-lg-center ml-lg-auto nav-my-store">                        
+                        <li class="nav-item banner-heart">
+                            <a href="#">
+                                <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M8.97152 16.7157L9.99939 15L11.053 16.7C10.4168 17.0943 9.61362 17.1003 8.97152 16.7157ZM8.49157 3.00745C7.71856 2.48243 6.70865 2 5.60747 2C3.08212 2 1.59985 3.85714 2.09394 6.40625C2.93987 10.7706 9.99939 15 9.99939 15C8.97152 16.7157 8.97191 16.7159 8.97152 16.7157L8.96752 16.7133L8.96095 16.7093L8.9402 16.6967C8.92305 16.6863 8.89931 16.6718 8.8694 16.6533C8.80959 16.6164 8.725 16.5636 8.61891 16.496C8.40691 16.3607 8.10812 16.1655 7.74906 15.9184C7.03368 15.4259 6.06543 14.7178 5.06254 13.8585C4.06529 13.0039 2.99565 11.9675 2.10359 10.8133C1.22404 9.67525 0.424685 8.30467 0.130483 6.78682C-0.205204 5.05495 0.0965686 3.3269 1.15486 2.00009C2.21997 0.664732 3.84152 0 5.60747 0C7.43114 0 8.94705 0.858975 9.8875 1.54462C9.92537 1.57223 9.96267 1.59983 9.99939 1.62737C10.0361 1.59983 10.0734 1.57223 10.1113 1.54462C11.0517 0.858975 12.5676 0 14.3913 0C18.3364 0 20.6123 3.65474 19.8509 6.86746C19.5018 8.34055 18.693 9.68205 17.8118 10.8083C16.9183 11.9501 15.8623 12.9815 14.8797 13.836C13.8921 14.6949 12.9444 15.4046 12.245 15.8991C11.8941 16.1473 11.6027 16.3434 11.396 16.4793C11.2927 16.5473 11.2103 16.6003 11.1521 16.6374C11.1374 16.6468 11.1242 16.6552 11.1126 16.6625C11.1013 16.6697 11.0915 16.6759 11.0833 16.681L11.0632 16.6936L11.0569 16.6976L11.053 16.7C11.0526 16.7002 11.053 16.7 9.99939 15C9.99939 15 16.8786 10.7363 17.9048 6.40625C18.3989 4.32142 16.9167 2 14.3913 2C13.2901 2 12.2802 2.48243 11.5072 3.00745C10.5845 3.63411 9.99939 4.32143 9.99939 4.32143C9.99939 4.32143 9.41423 3.63411 8.49157 3.00745Z"
+                                 fill="#000000" />
+                           </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item store-bg">
+                            <a href="#" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 ">
+                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                 fill="white"></path>
+                           </svg>
+                                <span class="badge badge-pill badge-floating bg-green border-dark">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    {% block content %}{% endblock %}
+
+
+
+<footer id="footer-main">
+    <div class="container">
+        <div class="row pt-md top-footer delimiter-top">
+            <div class="col-lg-12 mb-5 mb-lg-0">
+                <a href="{% url 'home'%}"> <img  src="{% static 'img/storego-image1.png' %}" alt="Footer logo"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 footer-content">
+                <ul class="list-unstyled f-list">
+                    <li><a class="active" href="#">Home Pages</a></li>
+                    <li><a  href="#">Pricing</a></li>
+                    <li><a  href="#">Contact Us</a></li>
+                    <li><a  href="#">Team</a></li>
+                </ul>
+                <div class="footer-social">
+                    <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+                        <li class="nav-item d-flex align-items-center">
+                            <p class="mb-0 text-uppercase">Follow us on :</p>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" target="_blank">
+                                <i class="fab fa-dribbble "></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    <div class="row align-items-center justify-content-md-between py-2 delimiter-top">
+        <div class="col-md-12">
+            <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                © 2021 My Store. All rights reserved
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+
+
+<script src="{% static 'js/purpose.core.js' %}"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <!-- Purpose JS -->
+    <script src="{% static 'js/purpose.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script>
+        $(document).on('click', '.qty-plus', function() {
+            $(this).prev().val(+$(this).prev().val() + 1);
+        });
+        $(document).on('click', '.qty-minus', function() {
+            if ($(this).next().val() > 0) $(this).next().val(+$(this).next().val() - 1);
+        });
+    </script>
+</html>

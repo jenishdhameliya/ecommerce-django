@@ -1,0 +1,324 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <section class="my-cart-section my-payment-box sec-top">
+            <div class="container">
+                <!-- Shopping cart table -->
+                <div class="row">
+                    <div class="pr-title mb-4">
+                        <h3 class=" mt-4 store-title t-secondary playfair">Checkout</h3>
+                        <div class="payment-step">
+                            <a href="my-cart.html" class="btn btn-mycart">1 - My Cart</a>
+                            <a href="my-checkout.html" class="btn btn-mycart">2 - Customer</a>
+                            <a href="my-payment.html" class="btn btn-mycart active">3 - Payment</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-grid">
+                    <div class="col-xl-8 col-lg-7">
+                        <form>
+                            <div class="card">
+                                <div class="box-space box-primary bg-y-box">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" name="radio-payment"
+                                                    id="radio-payment-cash">
+                                                <label class="custom-control-label h6 mb-0 lh-180"
+                                                    for="radio-payment-cash">Cash On Delivery </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <p class="mt-2 mb-0 text-12">Cash on delivery is a type of transaction in
+                                                which payment for a good is made at the time of delivery.</p>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-12 text-right">
+                                            <svg width="36" height="32" viewBox="0 0 36 32" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M0 3.36842C0 1.50809 1.61178 0 3.6 0H10.8H19.8H21.6H32.4C33.3941 0 34.2 0.754047 34.2 1.68421C34.2 2.61437 33.3941 3.36842 32.4 3.36842H30.6356L32.2299 10.8267C32.5193 11.0399 32.7757 11.296 32.9872 11.5891L35.3839 14.9114C35.7854 15.468 36 16.1243 36 16.7959V25.2632C36 27.1235 34.3882 28.6316 32.4 28.6316H31.7937C30.7826 30.6231 28.6132 32 26.1 32C23.5868 32 21.4174 30.6231 20.4063 28.6316H19.8H13.7937C12.7826 30.6231 10.6132 32 8.1 32C5.49228 32 3.25462 30.5176 2.2971 28.4042C0.952882 27.9157 0 26.6936 0 25.2632V3.36842ZM21.6 3.36842H26.9997C26.9998 3.47734 27.0113 3.58785 27.035 3.69872L28.4044 10.1053H21.6V3.36842ZM18 3.36842H10.8L10.7994 3.36842H3.6V15.1579H18V3.36842ZM18 18.5263H3.6V21.9798C4.74346 20.888 6.33718 20.2105 8.1 20.2105C11.2738 20.2105 13.8995 22.4065 14.3362 25.2632H18V18.5263ZM21.6 21.9798C22.7435 20.888 24.3372 20.2105 26.1 20.2105C29.2738 20.2105 31.8995 22.4065 32.3362 25.2632H32.4V16.7959L30.0033 13.4737H21.6V21.9798ZM23.4 26.1053C23.4 24.71 24.6088 23.5789 26.1 23.5789C27.5912 23.5789 28.8 24.71 28.8 26.1053C28.8 27.5005 27.5912 28.6316 26.1 28.6316C24.6088 28.6316 23.4 27.5005 23.4 26.1053ZM8.1 23.5789C6.60883 23.5789 5.4 24.71 5.4 26.1053C5.4 27.5005 6.60883 28.6316 8.1 28.6316C9.59117 28.6316 10.8 27.5005 10.8 26.1053C10.8 24.71 9.59117 23.5789 8.1 23.5789Z"
+                                                    fill="#000000" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="box-space">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" name="radio-payment"
+                                                    id="radio-payment-card">
+                                                <label class="custom-control-label h6 mb-0 lh-180"
+                                                    for="radio-payment-card">Credit Card (Strip)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12">
+                                            <p class="t-secondary mt-2 mb-0 text-12">Safe money transfer using your bank
+                                                account. We support Mastercard, Visa, Maestro and Skrill.</p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                                            <img alt="Image placeholder" src="{% static 'img/mastercard.png' %}" width="40"
+                                                class="mr-2">
+                                            <img alt="Image placeholder" src="{% static 'img/visa.png' %}" width="40"
+                                                class="mr-2">
+                                            <img alt="Image placeholder" src="{% static 'img/skrill.png' %}" width="40">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center mt-3">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label t-gray font-600">Name on card</label>
+                                                <input class="form-control input-style input-primary" type="text" placeholder="Rafał">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label t-gray font-600">Last Name on
+                                                    card</label>
+                                                <input class="form-control input-style" type="text"
+                                                    placeholder="Enter Your Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="box-space">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" name="radio-payment"
+                                                    id="radio-payment-Paypal">
+                                                <label class="custom-control-label h6 mb-0 lh-180"
+                                                    for="radio-payment-Paypal">Paypal</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12">
+                                            <p class="text-muted mt-2 mb-0 text-12">Pay your order using the most known
+                                                and secure platform for online money transfers. You will be redirected
+                                                to PayPal to finish complete your purchase. </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                                            <img alt="Image placeholder" src="{% static 'img/paypa.png' %}" width="77"
+                                                class="ml-2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="box-space">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" name="radio-payment"
+                                                    id="radio-payment-Whatsapp">
+                                                <label class="custom-control-label h6 mb-0 lh-180"
+                                                    for="radio-payment-Whatsapp">Whatsapp</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12">
+                                            <p class="text-muted mt-2 mb-0 text-12">Click to chat. The click to chat
+                                                feature lets customers click an URL in order to directly start a chat
+                                                with another person or business via WhatsApp. ... QR code. As you know,
+                                                having to add a phone number to
+                                                your contacts in order to start up a WhatsApp message can take a little
+                                                while. ....</p>
+                                        </div>
+                                        <div class="col-md-3 col-md-3 col-sm-12 text-right">
+                                            <img class="img-width ml-2" alt="Image placeholder" src="{% static 'img/whatsapp-logo.png' %}"
+                                                width="130">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="box-space">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label t-gray font-600">Name on card</label>
+                                                <input class="form-control input-style" type="text"
+                                                    placeholder="Enter phone Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="box-space ">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" name="radio-payment"
+                                                    id="radio-payment-Direct">
+                                                <label class="custom-control-label h6 mb-0 lh-180"
+                                                    for="radio-payment-Direct">Direct Bank Transfer</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12">
+                                            <p class="t-secondary mt-2 mb-0 text-12"><span
+                                                    class="font-weight">Bank:</span> UNITED COMMUNITY
+                                            </p>
+                                            <p class="t-secondary mt-2 mb-0 text-12"><span class="font-weight">BANK Bank
+                                                    Account Number:</span> 67265159299
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12">
+                                            <p class="t-secondary mt-2 mb-0 text-12"><span class="font-weight">Routing
+                                                    Number:</span> 71119865</p>
+                                            <p class="t-secondary mt-2 mb-0 text-12"><span
+                                                    class="font-weight">IBAN:</span> IN97350997896859414902082924</p>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-12 text-right">
+
+                                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M7.61905 4.99915C7.61905 4.4476 8.04474 4 8.57143 4H27.3082C26.8968 4.90926 26.6667 5.9264 26.6667 7V10H30.4762L26.6667 10V22V23.5556V31.1771C26.6667 33.8407 24.6102 36 22.0734 36C19.5366 36 17.4802 33.8407 17.4802 31.1771V28.099C17.4802 26.9397 16.5851 26 15.4811 26H7.61905V20.4571V4.99915ZM30.4762 23.5556V31.1771C30.4762 36.0499 26.7141 40 22.0734 40C22.0171 40 21.9608 39.9994 21.9048 39.9983V40H11.4286C5.19354 40 0 34.6975 0 28.099C0 26.9397 0.895033 26 1.99906 26H3.80952V20.4571V4.99915C3.80952 2.23699 5.9422 0 8.57143 0H33.3333C37.0152 0 40 3.13401 40 7V11.901C40 13.0602 39.105 14 38.0009 14H30.4762V22V23.5556ZM30.4762 10V7C30.4762 5.34315 31.7554 4 33.3333 4C34.9113 4 36.1905 5.34315 36.1905 7V10H30.4762ZM13.6706 31.1771C13.6706 32.957 14.1726 34.6138 15.036 36H11.4286C7.8788 36 4.86402 33.4309 4.03509 30H5.71429H13.6706V31.1771ZM11.4286 16C10.3766 16 9.52381 16.8954 9.52381 18C9.52381 19.1046 10.3766 20 11.4286 20H22.8571C23.9091 20 24.7619 19.1046 24.7619 18C24.7619 16.8954 23.9091 16 22.8571 16H11.4286ZM9.52381 10C9.52381 8.89543 10.3766 8 11.4286 8H22.8571C23.9091 8 24.7619 8.89543 24.7619 10C24.7619 11.1046 23.9091 12 22.8571 12H11.4286C10.3766 12 9.52381 11.1046 9.52381 10Z"
+                                                    fill="#274A5A" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-right">
+                                <a href="shop-landing.html"
+                                    class="btn btn-link text-black text-uppercase text-sm text-dark font-weight-bold">Return
+                                    to shop</a>
+                                    <a href="#"
+                                    class="btn btn-sm btn-primary rounded-pill btn-icon p-button hover-translate-y-n3">
+                                    <span class="btn-prodcut-add mr-2">Next step</span>
+                                    <span class="btn-inner--icon">
+                                        <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div data-toggle="sticky" data-sticky-offset="30">
+                            <div class="card" id="card-summary">
+                                <div class="card-header b-0 py-3">
+                                    <div class="row align-items-center">
+                                        <h3 class="ml-3 playfair text-primary store-title-medium t-secondary">Summary
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <div class="media align-items-center">
+                                                <img alt="Image placeholder" class="mr-2"
+                                                    src="{% static 'img/jacket-small.png' %}" style="width: 42px;">
+                                                <div class="media-body">
+                                                    <div class="sum-title lh-100">
+                                                        <p class="mb-0 text-white t-title">Home Controller
+                                                            Google Alexa</p>
+                                                    </div>
+                                                    <small class="text-muted s-dim text-white">1 x $129.00 + $6.45 (SGST
+                                                        5%)
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 text-right lh-100">
+                                            <small class="text-white">Price</small>
+                                            <p class="text-primary s-rate ">$12.90</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 pt-2 delimiter-top">
+                                        <div class="col-9">
+                                            <div class="media align-items-center">
+                                                <img alt="Image placeholder" class="mr-2"
+                                                    src="{% static 'img/jacket-small.png' %}" style="width: 42px;">
+                                                <div class="media-body">
+                                                    <div class="sum-title lh-100">
+                                                        <p class="mb-0 text-white t-title">Home Controller
+                                                            Google Alexa</p>
+                                                    </div>
+                                                    <small class="text-muted s-dim text-white">1 x $129.00 + $6.45 (SGST
+                                                        5%)
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 text-right lh-100">
+                                            <small class="text-white">Price</small>
+                                            <p class="text-primary s-rate ">$12.90</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 pt-2 delimiter-top">
+                                        <div class="col-9">
+                                            <div class="media align-items-center">
+                                                <img alt="Image placeholder" class="mr-2"
+                                                    src="{% static 'img/jacket-small.png' %}" style="width: 42px;">
+                                                <div class="media-body">
+                                                    <div class="sum-title lh-100">
+                                                        <p class="mb-0 text-white t-title">Home Controller
+                                                            Google Alexa</p>
+                                                    </div>
+                                                    <small class="text-muted s-dim text-white">1 x $129.00 + $6.45 (SGST
+                                                        5%)
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 text-right lh-100">
+                                            <small class="text-white">Price</small>
+                                            <p class="text-primary s-rate ">$12.90</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body cart-subtotal">
+                                    <!-- Subtotal -->
+                                    <div class="row mt-2 pt-2">
+                                        <div class="col-7 text-right">
+                                            <small class="font-weight-bold">Subtotal (Before Tax):</small>
+                                        </div>
+                                        <div class="col-5 text-right">
+                                            <span class="text-sm font-weight-bold t-black">$12.90</span>
+                                        </div>
+                                    </div>
+                                    <!-- Shipping -->
+                                    <div class="row mt-2 pt-2 border-top">
+                                        <div class="col-7 text-right">
+                                            <div class="media align-items-center">
+                                                <div class="media-body">
+                                                    <div class="text-limit lh-100">
+                                                        <small class="font-weight-bold mb-0">SGST</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5 text-right">
+                                            <span class="text-sm font-weight-bold t-black">$6.85</span>
+                                        </div>
+                                    </div>
+                                    <!-- Subtotal -->
+                                    <div class="row mt-2 pt-2 border-top">
+                                        <div class="col-7 text-right">
+                                            <small class="text-uppercase font-weight-bold ">Total:</small>
+                                        </div>
+                                        <div class="col-5 text-right">
+                                            <span class="text-sm font-weight-bold t-black s-p-total">$12.90</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

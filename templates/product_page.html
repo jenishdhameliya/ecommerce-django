@@ -1,0 +1,465 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="product-section pt-3 bg-section-gray">
+        <div class="container">           
+            <div class="row row-grid">
+                <div class="col-lg-6 product-slider">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                          <div class="carousel-item active">
+                            <img src="{{product.image.url}}" class="d-block w-100" alt="..."
+                                            data-remote="{{product.image.url}}" data-type="image"
+                                            data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{product.image.url}}" class="d-block w-100" alt="..."
+                            data-remote="{{product.image.url}}" data-type="image"
+                            data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                      
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">   
+                    <h2 class="store-title">Yellow Cotton
+                        Modern Hoodie</h2>
+                    <div class="pd-rate mt-2 mb-2">
+                        <div class="p-rateing  d-flex">
+                            <button type="button" class="action-item p-new bg-primary p-stoke">
+                                IN STOCK
+                            </button>
+                            <span class="static-rating static-rating-sm d-block">
+                                <i class="star fas fa-star  text-primary"></i>
+                                <i class="star fas fa-star  text-primary"></i>
+                                <i class="star fas fa-star  text-primary"></i>
+                                <i class="star fas fa-star  text-primary"></i>
+                                <i class="star fas fa-star t-gray"></i></span>
+                            <p class="mb-0 ml-3"><span class="t-gray">4.7/5 (3 reviews) </span> </p>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="h3 mb-0 p-price">{{product.price}}</span>
+                        <sup class="h3 mb-0 sub-price">$31.50</sup>
+                    </div>
+
+                    <p class="text-sm mb-3 product-detail-p">There is only that moment and the incredible certainty that
+                        <br>everything under the sun has been.</p>
+                    <div class="d-flex">                        
+                        <div class="item-color">
+                            <p class="i-title">COLOR:</p>
+                            <ul>
+                                <li>
+                                    <a class="bg-primary"></a>
+                                </li>
+                                <li>
+                                    <a class="bg-black"></a>
+                                </li>
+                                <li>
+                                    <a class="bg-gray"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-size ml-3">
+                            <p class="i-title">SIZE:</p>
+                            <select class="custom-select">
+                                <option selected="">XL</option>
+                                <option value="1">M</option>
+                                <option value="2">S</option>
+                                <option value="3">XXL</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cart-buttons">
+                        <a href="#"
+                            class="btn p-button btn-primary btn-icon hover-translate-y-n3">
+                            <span class="btn-prodcut-add mr-2">Add to cart</span>
+                            <span class="btn-inner--icon">
+                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                        fill="white"></path>
+                                </svg>
+                            </span>
+                        </a>                       
+                    </div>
+                    <div class="cat-id d-flex">
+                        <p class="mb-0 t-black14 f-14"><span class="t-l-gray">Category:</span> Electronics</p>
+                        <p class="mb-0 t-black14 ml-4 f-14"><span class="t-l-gray">ID:</span> 2188641</p>
+                    </div>                 
+                </div>                
+            </div>
+        </div>
+    </section>
+    <section class="product-section bg-body pt-4">
+        <div class="container">           
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12"> 
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <img src="{% static 'img/p-detail.png' %}" class="d-block w-100">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <img src="{% static 'img/p-detail1.png' %}" class="d-block w-100">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <img src="{% static 'img/p-detail2.png' %}" class="d-block w-100">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <img src="{% static 'img/p-detail.png' %}" class="d-block w-100">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <img src="{% static 'img/p-detail.png' %}" class="d-block w-100">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <img src="{% static 'img/p-detail1.png' %}" class="d-block w-100">
+                        </div>
+                    </div>                   
+                </div>  
+                <div class="col-lg-6">                    
+                    <div class="store-tabs" id="accordion" role="tablist">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                        DESCRIPTION
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-body">
+                                    <p class="t-black"> {{product.description}}</p> </p>
+                                    
+                                    <p class="t-black">Wherever your ideas
+                                    take you, you’ll get there faster than ever with high‑performance processors and
+                                    memory, advanced graphics, blazing‑fast storage, and
+                                    more. Wherever your ideas take you, you’ll get there faster than ever with
+                                    high‑performance processors and memory, advanced graphics, blazing‑fast storage, and
+                                    more.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        SPECIFICATION
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-body">
+                                    Wherever your ideas take you, you’ll get there faster than ever with
+                                    high‑performance processors and memory, advanced graphics
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <h5 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        DETAILS
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-body">
+                                    Wherever your ideas take you, you’ll get there faster than ever with
+                                    high‑performance processors and memory, advanced graphics
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <a class="t-black btn-instruction"><span class="btn-inner--icon">
+                                <svg class="w-auto mr-2" height="21" viewBox="0 0 16 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                        fill="#000"></path>
+                                </svg>
+                            </span> Download instruction .pdf </a>
+                    </div>
+                    <div class="customer-product-review">
+                        <div class="review-title">
+                            <h5><span class="r-title">Reviews:</span> <span class="r-rate">4.7/5</span> <span
+                                    class="t-gray"> (reviews)</span> </h5>
+                            <div class="p-rateing  d-flex">
+                                <span class="static-rating static-rating-sm d-block">
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-blacky"></i>
+                                    <i class="star fas fa-star"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="pd-rate">
+                            <div class="p-rateing  d-flex">
+                                <span class="static-rating static-rating-sm d-block">
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-blacky"></i>
+                                    <i class="star fas fa-star"></i></span>
+                                <p class="mb-0 ml-3"><span class="t-gray"> 1 month ago </span> </p>
+                            </div>
+                        </div>
+                        <!-- Product title -->
+                        <p class="text-sm mb-0 mt-2 product-detail">Wherever your ideas take you, you’ll get there
+                            faster than ever with high‑performance processors and memory, advanced graphics,
+                            blazing‑fast storage, and more. </p>
+                        <div class="mt-2">
+                            <p class="mb-0 t-black13 s-title">Rafał Pacyk</p>
+                            <span class="s-title">CEO InfinityRain interactive agency</span>
+                        </div>
+                    </div>
+                    <div class="customer-product-review mt-3">
+                        <div class="pd-rate">
+                            <div class="p-rateing  d-flex">
+                                <span class="static-rating static-rating-sm d-block">
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-black"></i>
+                                    <i class="star fas fa-star voted t-blacky"></i>
+                                    <i class="star fas fa-star"></i></span>
+                                <p class="mb-0 ml-3"><span class="t-gray"> 1 month ago </span> </p>
+                            </div>
+                        </div>
+                        <!-- Product title -->
+                        <p class="text-sm mb-0 mt-2 product-detail">Wherever your ideas take you, you’ll get there
+                            faster than ever with high‑performance processors and memory, advanced graphics,
+                            blazing‑fast storage, and more. </p>
+                        <div class="mt-2">
+                            <p class="mb-0 t-black13 s-title">Rafał Pacyk</p>
+                            <span class="s-title">CEO InfinityRain interactive agency</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <a class="t-black text-underline">More reviews</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products -->
+    <section class="featured-section pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="pr-title">
+                    <h3 class="mt-4 mb-4 store-title-medium t-gray">Related products</h3>
+                </div>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="product-box">
+                        <div class="card card-product">
+                            <div class="card-image">
+                                <a href="#">
+                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
+                                        class="img-center img-fluid">
+                                </a>
+                                <div class="search-icon">
+                                    <a  href="#">
+                                        <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
+                                    </a>
+                                    </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
+                                <p class="text-sm">
+                                    Category:<span class="t-black"> Hoodies </span>
+                                </p>
+                                <p><span class="card-price t-black15">$12.90</span></p>
+                                <div class="product-price mt-3">
+                                    <a href="#"
+                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
+                                        <span class="btn-inner--text">Start shopping</span>
+
+                                        <span class="btn-inner--icon">
+                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                                    fill="white"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="product-box">
+                        <div class="card card-product">
+                            <div class="card-image">
+                                <a href="#">
+                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
+                                        class="img-center img-fluid">
+                                </a>
+                                <div class="search-icon">
+                                    <a  href="#">
+                                        <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
+                                    </a>
+                                    </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
+                                <p class="text-sm">
+                                    Category:<span class="t-black"> Hoodies </span>
+                                </p>
+                                <p><span class="card-price t-black15">$12.90</span></p>
+                                <div class="product-price mt-3">
+                                    <a href="#"
+                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
+                                        <span class="btn-inner--text">Start shopping</span>
+
+                                        <span class="btn-inner--icon">
+                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                                    fill="white"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="product-box">
+                        <div class="card card-product">
+                            <div class="card-image">
+                                <a href="#">
+                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
+                                        class="img-center img-fluid">
+                                </a>
+                                <div class="search-icon">
+                                    <a  href="#">
+                                        <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
+                                    </a>
+                                    </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
+                                <p class="text-sm">
+                                    Category:<span class="t-black"> Hoodies </span>
+                                </p>
+                                <p><span class="card-price t-black15">$12.90</span></p>
+                                <div class="product-price mt-3">
+                                    <a href="#"
+                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
+                                        <span class="btn-inner--text">Start shopping</span>
+
+                                        <span class="btn-inner--icon">
+                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                                    fill="white"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="product-box">
+                        <div class="card card-product">
+                            <div class="card-image">
+                                <a href="#">
+                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
+                                        class="img-center img-fluid">
+                                </a>
+                                <div class="search-icon">
+                                    <a  href="#">
+                                        <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
+                                    </a>
+                                    </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
+                                <p class="text-sm">
+                                    Category:<span class="t-black"> Hoodies </span>
+                                </p>
+                                <p><span class="card-price t-black15">$12.90</span></p>
+                                <div class="product-price mt-3">
+                                    <a href="#"
+                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
+                                        <span class="btn-inner--text">Start shopping</span>
+
+                                        <span class="btn-inner--icon">
+                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                                    fill="white"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="product-box">
+                        <div class="card card-product">
+                            <div class="card-image">
+                                <a href="#">
+                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
+                                        class="img-center img-fluid">
+                                </a>
+                                <div class="search-icon">
+                                    <a  href="#">
+                                        <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
+                                    </a>
+                                    </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
+                                <p class="text-sm">
+                                    Category:<span class="t-black"> Hoodies </span>
+                                </p>
+                                <p><span class="card-price t-black15">$12.90</span></p>
+                                <div class="product-price mt-3">
+                                    <a href="#"
+                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
+                                        <span class="btn-inner--text">Start shopping</span>
+
+                                        <span class="btn-inner--icon">
+                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
+                                                    fill="white"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
