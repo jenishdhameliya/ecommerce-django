@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container account_form">
+        <div class="row">
+                <form action="POST">
+                    {% csrf_token %}
+                    {% for profile in profiles %}
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" value="{{profile.user.username}}" name="username">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="text" value="{{profile.user.email}}" name="email">
+                    </div>
+                    <div class="field">
+                        <label for="bio">bio</label>
+                        <input type="text" name="bio">
+                    </div>
+                    <div class="field">
+                        <label for="state">state</label>
+                        <input type="text" name="state">
+                    </div>
+                    <div class="field">
+                        <label for="city">city</label>
+                        <input type="text" name="city">
+                    </div>
+                    <div class="field">
+                        <label for="birth">birth_date</label>
+                        <input type="date" name="birth_date">
+                    </div>
+                    <div class="field">
+                        <label for="Mobile" >Mobile</label>
+                        <input type="number" value="{{profile.Mobile}}" name="number">
+                    </div>
+                    <div class="field">
+                        <label for="profile">profile_image</label>
+                        <input type="file" name="profile_image">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}

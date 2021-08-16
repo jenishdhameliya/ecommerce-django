@@ -2770,3 +2770,28 @@ left: 0px;
 .new-cls{
     border-radius: .375rem!important;
 }
+.register-form .form-login{
+    width: 30%;
+}
+.form-login lable{
+    margin-bottom: 10px;
+    display: block;
+}
+.form-login input{
+    width:100%;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+}
+.form-login button{
+    width:100%;
+    margin-top: 10px;
+}
+.dont-account{
+    display: block;
+    text-align: center;
+    padding-top:20px;
+}
+.account_form input{
+    display: block;
+    margin-bottom: 15px;
+}

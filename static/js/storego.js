@@ -68,3 +68,5 @@ $('#myCarousel').carousel({
          dropdown[dropdown.is(':hover')?'addClass':'removeClass']('show');
      },300);
  });
+
+

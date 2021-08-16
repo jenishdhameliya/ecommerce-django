@@ -2,19 +2,19 @@
 {% block content %}
 
     <div class="container register-form">
-        <form method="POST">
+        <form method="POST" class="form-login">
         {% csrf_token %}
-                {% if messages %}
+                {% comment %} {% if messages %}
                     <ul class="messages">
                         {% for message in messages %}
                         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
                         {% endfor %}
                     </ul>
-                {% endif %}
-       Username <input type="text" name="username" required><br />
-       password <input type="password" name="password" required><br />
+                {% endif %} {% endcomment %}
+      <lable> Username</lable> <input type="text" name="username" required><br />
+       <lable> password</lable><input type="password" name="password" required><br />
         <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
         </form>
-        Don't have an account? <a href="/register" target="blank"><strong>register here</strong></a>!
+       <span class="dont-account"> Don't have an account? <a href="/register" target="blank"><strong>register here</strong></a>!</span>
     </div>
 {% endblock %}
