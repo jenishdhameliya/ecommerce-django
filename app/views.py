@@ -43,7 +43,7 @@ def register(request):
             obj.save()
             Profile.objects.create(
                 user=obj,
-                Mobile = form.cleaned_data['number']
+                mobile = form.cleaned_data['number']
             )
             return redirect('login')
     else:
@@ -86,7 +86,7 @@ class UserProfileView(TemplateView):
         number = data.get('number')
         profile_image = data.get('profile_image')
 
-        return redirect('company_view')
+        return redirect('home')
 
 class CartView(View):
     def get(self, request, *args, **kwargs):
@@ -120,6 +120,3 @@ class ProductView(TemplateView):
 def logout_view(request):
     logout(request)
     return redirect('home')
-
-
-

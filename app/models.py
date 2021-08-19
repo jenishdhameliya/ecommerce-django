@@ -27,8 +27,8 @@ class Profile(models.Model):
     state = models.CharField(max_length=30, blank=True)
     city = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
-    Mobile = models.IntegerField(null=True, blank=True)
-    Profile_image = models.ImageField(upload_to="images", height_field=None, width_field=None, max_length=100)
+    mobile = models.IntegerField(null=True, blank=True)
+    profile_image = models.ImageField(upload_to="images", height_field=None, width_field=None, max_length=100)
 
     def __str__(self):
         return f'{self.user.username}'
