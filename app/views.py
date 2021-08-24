@@ -8,6 +8,7 @@ from django.contrib import messages
 from .models import Product, Profile
 from .forms import ProfileForm
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your views here.
@@ -17,8 +18,10 @@ def login_user(request):
         # AuthenticationForm_can_also_be_used__
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username = username, password = password)
-        print(user.username)
+        # print("++++++++++++++++++++++++", username)
+        # print("++++++++++++++++++++++++", password)
+        user = authenticate(username = username, password = password)
+        print("+????????????????????????????????????///++++++++", user)
         if user:
             login(request, user)
             messages.success(request, f' wecome {username} !!')
@@ -35,14 +38,18 @@ def register(request):
     if request.method == "POST":
 
         form = SignUpForm(request.POST)
+        print(request.POST)
         if form.is_valid():
-            obj = User()
-            obj.username = form.cleaned_data['username']
-            obj.email = form.cleaned_data['email']
-            obj.password =form.cleaned_data['password1']
-            obj.save()
+            form.save()
+            print(form)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+
+            login(request, user)
+            # User.objects.create()
             Profile.objects.create(
-                user=obj,
+                user=user,
                 mobile = form.cleaned_data['number']
             )
             return redirect('login')
@@ -62,21 +69,19 @@ def Blog(request):
     return render(request, 'blog.html',{'user': request.user})
 
 
-# def profile(request):
-#     profile = Profile.objects.all()  
-#     return render(request, 'profile.html', {'profiles': profile})  
-
 class UserProfileView(TemplateView):    
     template_name = 'profile.html'
 
     def get_context_data(self, **kwargs):
         context = super(UserProfileView, self).get_context_data()
-        context['profiles'] = Profile.objects.all()
-        print("=================================",context['profiles'])
+        status_list = Profile.objects.all()
+        context['profile'] = status_list.filter(user=self.request.user).first()
+        
         return context
 
     def post(self, request):
         data = request.POST
+        print("gsk",data)
         username = data.get('username')
         email = data.get('email')
         bio = data.get('bio')
@@ -84,8 +89,16 @@ class UserProfileView(TemplateView):
         city = data.get('city')
         birth_date = data.get('birth_date')
         number = data.get('number')
-        profile_image = data.get('profile_image')
-
+        profile_image=request.FILES.get('profile_image')
+        print("==============================", profile_image)
+        try:
+            profile = Profile.objects.filter(user=self.request.user).update(bio=bio, state=state, city=city, birth_date=birth_date, mobile=number)
+            profile1 = Profile.objects.get(user=self.request.user)
+            profile1.profile_image = profile_image
+            profile1.save()
+        except ObjectDoesNotExist:
+            print("Does Not Exist!")
+        
         return redirect('home')
 
 class CartView(View):
