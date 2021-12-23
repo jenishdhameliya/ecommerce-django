@@ -21,7 +21,7 @@
         <nav class="navbar navbar-main navbar-expand-lg navbar-transparent" id="navbar-main">
             <div class="container px-lg-0">
                 <!-- Logo -->
-                <a class="navbar-brand mr-lg-5" href="{% url 'home'%}">
+                <a class="navbar-brand mr-lg-5" href="/">
                     <img alt="Image placeholder" src="{% static 'img/storego-image1.png' %}" id="navbar-logo">
                 </a>
                 <!-- Navbar collapse trigger -->
@@ -36,13 +36,13 @@
                             <a class="nav-link active" href="#">Shop</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="{% url 'product' %}">Products</a>
+                            <a class="nav-link" href="{% url 'store' %}">Products</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav align-items-lg-center ml-lg-auto nav-my-store">                        
@@ -68,7 +68,7 @@
 
                         {% if user.is_authenticated %}
                                 <li class="nav-item dropdown dropdown-slide dropdown-hover">
-                                    <a class=" btn drop_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class=" btn drop_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{profile.birth_date}}
                                     {% if profile.profile_image.url != '' %}
                                         <img alt="Image placeholder" src="{{profile.profile_image.url}}" /><i class="fas fa-caret-down"></i>
                                     {% else %}
@@ -76,13 +76,13 @@
                                     {% endif%}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'profile'%}">Profile</a>
-                                    <a class="dropdown-item" href="{% url 'logout'%}">Log Out</a>
+                            <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">Log Out</a>
                                 </div>
                                 </li>
                         {% else %}
                             <li class="nav-item store-bg">
-                                <a href="{% url 'login'%}" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 login">
+                                <a href="#" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 login">
                                     <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </li>
@@ -103,7 +103,7 @@
     <div class="container">
         <div class="row pt-md top-footer delimiter-top">
             <div class="col-lg-12 mb-5 mb-lg-0">
-                <a href="{% url 'home'%}"> <img  src="{% static 'img/storego-image1.png' %}" alt="Footer logo"></a>
+                <a href="#"> <img  src="{% static 'img/storego-image1.png' %}" alt="Footer logo"></a>
             </div>
         </div>
         <div class="row">

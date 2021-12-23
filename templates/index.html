@@ -20,7 +20,7 @@
         <nav class="navbar navbar-main navbar-expand-lg navbar-transparent" id="navbar-main">
             <div class="container px-lg-0">
                 <!-- Logo -->
-                <a class="navbar-brand mr-lg-5" href="#">
+                <a class="navbar-brand mr-lg-5" href="/">
                     <img alt="Image placeholder" src="{% static 'img/storego-image1.png' %}" id="navbar-logo">
                 </a>
                 <!-- Navbar collapse trigger -->
@@ -34,22 +34,22 @@
                     <ul class="navigation-menu">
                         <!-- Home - Overview  -->
                         <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'product' %}">Shop</a>
+                            <a class="nav-link active" href="#">Shop</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="{% url 'product' %}">Products</a>
+                            <a class="nav-link" href="{% url 'store' %}">Products</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="{% url 'about'%}">About Us</a>
+                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="{% url 'blog'%}">Blog</a>
+                            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav align-items-lg-center ml-lg-auto nav-my-store left-bar-cls">
 
                         <li class="nav-item store-bg">
-                            <a href="{% url 'cart'%}" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 ">
+                            <a href="#" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 ">
                                 <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -62,19 +62,19 @@
                         
         
                     
-                        {% if user.is_authenticated %}
+                        {% if request.session.customer %}
                                 <li class="nav-item dropdown dropdown-slide dropdown-hover">
                                     <a class=" btn btn-black rounded-pill hover-translate-y-n3 text-white new-cls" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{user.username}}
+                                    {{request.session.username}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'profile'%}">Profile</a>
-                                    <a class="dropdown-item" href="{% url 'logout'%}">Log Out</a>
+                            <a class="dropdown-item" href="{% url 'userprofile' %}">Profile</a>
+                                    <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
                                 </div>
                                 </li>
                         {% else %}
                             <li class="nav-item store-bg">
-                                <a href="{% url 'login'%}" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 login">
+                                <a href="#" class="nav-heart btn btn-black ml-2 mr-2 rounded-pill hover-translate-y-n3 login">
                                     <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </li>
@@ -134,7 +134,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 p-detail">
                                 <h3 class="store-title-medium t-secondary ml-5 mb-4">$12.90</h3>
-                                <a href="{% url 'cart'%}" class="btn btn-sm btn-black btn-icon">
+                                <a href="#" class="btn btn-sm btn-black btn-icon">
                                     <span class="btn-inner--text text-white">ADD TO CART</span>
                                     <span class="btn-inner--icon">
                                         <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,7 +213,7 @@
                                 <h3>New collection <br>
                                     Urban hoodie</h3>
                                 <p>There is only that moment and the incredible certainty that <br> everything under the sun has been written by one hand only.</p>
-                                <a href="{% url 'product'%}" class="btn btn-sm btn-white btn-icon  hover-translate-y-n3">
+                                <a href="#" class="btn btn-sm btn-white btn-icon  hover-translate-y-n3">
                                     <span class="btn-inner--text">Start shopping</span>
                                 </a>
                               </div>
@@ -224,7 +224,7 @@
                                 <h3>New collection <br>
                                     Urban hoodie</h3>
                                 <p>There is only that moment and the incredible certainty that <br> everything under the sun has been written by one hand only.</p>
-                                <a href="{% url 'product'%}" class="btn btn-sm btn-white btn-icon  hover-translate-y-n3">
+                                <a href="#" class="btn btn-sm btn-white btn-icon  hover-translate-y-n3">
                                     <span class="btn-inner--text">Start shopping</span>
                                 </a>
                               </div>
@@ -252,7 +252,7 @@
                                     <h3>New collection <br>
                                         Urban hoodie</h3>
                                         <p>There is only that moment and the <br> incredible certainty that </p>
-                                        <a href="{% url 'product'%}">SHOW MORE</a>
+                                        <a href="#">SHOW MORE</a>
                                 </div>
                               </div>                              
                         </div>
@@ -263,7 +263,7 @@
                                     <h3>New collection <br>
                                         Urban hoodie</h3>
                                         <p>There is only that moment and the <br> incredible certainty that </p>
-                                        <a href="{% url 'product'%}">SHOW MORE</a>
+                                        <a href="#">SHOW MORE</a>
                                 </div>
                               </div>
                         </div>
@@ -272,7 +272,7 @@
                 </div>
             </div>
         </section>  
-        <section class="store-feature-section bg-body">
+        <section class="featured-section bg-body">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mb-5 text-center">
@@ -281,50 +281,14 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-xl-3 col-lg-4 col-sm-6 product-box">
+                     
+                    <ul>
+                    {% for product in products %}
+                    <li class="product-box">
                         <div class="card card-product">
                             <div class="card-image">
                                 <a href="#">
-                                    <img alt="Image placeholder" src="{% static 'img/hoodie1.png' %}"
-                                        class="img-center img-fluid">
-                                </a>
-                                <div class="search-icon">
-                            <a  href="#">
-                                <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
-                            </a>
-                            </div>
-                               
-                            </div>
-                            <div class="card-body pt-0">
-                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                <p class="text-sm">
-                                    Category:<span class="t-black"> Hoodies </span>
-                                </p>
-                                <p><span class="card-price t-black15">$12.90</span></p>
-                                <div class="product-price mt-3">
-                                    <a href="#"
-                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                        <span class="btn-inner--text">Start shopping</span>
-
-                                        <span class="btn-inner--icon">
-                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                    fill="white"></path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 product-box">
-                        <div class="card card-product">
-                            <div class="card-image">
-                                <a href="#">
-                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
+                                    <img alt="Image placeholder" src="{{product.image.url}}"
                                         class="img-center img-fluid">
                                 </a>
                                 <div class="search-icon">
@@ -334,11 +298,11 @@
                                     </div>
                             </div>
                             <div class="card-body pt-0">
-                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
+                                <h6><a class="t-black13" href="#">{{product.name}}</a> <p class="card-price t-black15">{{product.price}}</p></h6>
                                 <p class="text-sm">
-                                    Category:<span class="t-black"> Hoodies </span>
+                                    Category:<span class="t-black"> {{product.category}}</span>
                                 </p>
-                                <p><span class="card-price t-black15">$12.90</span></p>
+                                
                                 <div class="product-price mt-3">
                                     <a href="#"
                                         class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
@@ -357,45 +321,9 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 product-box">
-                        <div class="card card-product">
-                            <div class="card-image">
-                                <a href="#">
-                                    <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
-                                        class="img-center img-fluid">
-                                </a>
-                                <div class="search-icon">
-                                    <a  href="#">
-                                        <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
-                                    </a>
-                                    </div>
-                            </div>
-                            <div class="card-body pt-0">
-                                <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                <p class="text-sm">
-                                    Category:<span class="t-black"> Hoodies </span>
-                                </p>
-                                <p><span class="card-price t-black15">$12.90</span></p>
-                                <div class="product-price mt-3">
-                                    <a href="#"
-                                        class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                        <span class="btn-inner--text">Start shopping</span>
-
-                                        <span class="btn-inner--icon">
-                                            <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                    fill="white"></path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>   
+                    </li>
+                    {% endfor %} 
+                    </ul>
                 </div>
             </div>
         </section>
@@ -469,212 +397,7 @@
                 </div>
             </div>
         </section>        
-        <section class="featured-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 mb-5 text-center">
-                        <p class="sub-title">StoreGo</p>
-                        <h3 class="store-title t-secondary">Featured Collections</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <ul>
-                        <li class="product-box">
-                            <div class="card card-product">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
-                                            class="img-center img-fluid">
-                                    </a>
-                                    <div class="search-icon">
-                                        <a  href="#">
-                                            <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
-                                        </a>
-                                        </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                    <p class="text-sm">
-                                        Category:<span class="t-black"> Hoodies </span>
-                                    </p>
-                                    <p><span class="card-price t-black15">$12.90</span></p>
-                                    <div class="product-price mt-3">
-                                        <a href="#"
-                                            class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                            <span class="btn-inner--text">Start shopping</span>
-    
-                                            <span class="btn-inner--icon">
-                                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                        fill="white"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-    
-                            </div>
-                        </li>
-                        <li class="product-box">
-                            <div class="card card-product">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
-                                            class="img-center img-fluid">
-                                    </a>
-                                    <div class="search-icon">
-                                        <a  href="#">
-                                            <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
-                                        </a>
-                                        </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                    <p class="text-sm">
-                                        Category:<span class="t-black"> Hoodies </span>
-                                    </p>
-                                    <p><span class="card-price t-black15">$12.90</span></p>
-                                    <div class="product-price mt-3">
-                                        <a href="#"
-                                            class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                            <span class="btn-inner--text">Start shopping</span>
-    
-                                            <span class="btn-inner--icon">
-                                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                        fill="white"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-    
-                            </div>
-                        </li>
-                        <li class="product-box">
-                            <div class="card card-product">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
-                                            class="img-center img-fluid">
-                                    </a>
-                                    <div class="search-icon">
-                                        <a  href="#">
-                                            <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
-                                        </a>
-                                        </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                    <p class="text-sm">
-                                        Category:<span class="t-black"> Hoodies </span>
-                                    </p>
-                                    <p><span class="card-price t-black15">$12.90</span></p>
-                                    <div class="product-price mt-3">
-                                        <a href="#"
-                                            class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                            <span class="btn-inner--text">Start shopping</span>
-    
-                                            <span class="btn-inner--icon">
-                                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                        fill="white"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-    
-                            </div>
-                        </li>
-                        <li class="product-box">
-                            <div class="card card-product">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
-                                            class="img-center img-fluid">
-                                    </a>
-                                    <div class="search-icon">
-                                        <a  href="#">
-                                            <img alt="Image placeholder" src="{% static 'img/ellipse.png' %} ">
-                                        </a>
-                                        </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                    <p class="text-sm">
-                                        Category:<span class="t-black"> Hoodies </span>
-                                    </p>
-                                    <p><span class="card-price t-black15">$12.90</span></p>
-                                    <div class="product-price mt-3">
-                                        <a href="#"
-                                            class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                            <span class="btn-inner--text">Start shopping</span>
-    
-                                            <span class="btn-inner--icon">
-                                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                        fill="white"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-    
-                            </div>
-                        </li>
-                        <li class="product-box">
-                            <div class="card card-product">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img alt="Image placeholder" src="{% static 'img/jaket-md.png' %}"
-                                            class="img-center img-fluid">
-                                    </a>
-                                    <div class="search-icon">
-                                        <a  href="#">
-                                            <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
-                                        </a>
-                                        </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h6><a class="t-black13" href="#">Yellow Cotton Hoodie</a></h6>
-                                    <p class="text-sm">
-                                        Category:<span class="t-black"> Hoodies </span>
-                                    </p>
-                                    <p><span class="card-price t-black15">$12.90</span></p>
-                                    <div class="product-price mt-3">
-                                        <a href="#"
-                                            class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">
-                                            <span class="btn-inner--text">Start shopping</span>
-    
-                                            <span class="btn-inner--icon">
-                                                <svg class="w-auto" height="21" viewBox="0 0 16 21" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M4 8.5C4 9.05229 4.44772 9.5 5 9.5C5.55228 9.5 6 9.05229 6 8.5V6.5H10V8.5C10 9.05229 10.4477 9.5 11 9.5C11.5523 9.5 12 9.05229 12 8.5V6.5H14V15.5C14 17.1569 12.6569 18.5 11 18.5H5C3.34315 18.5 2 17.1569 2 15.5V6.5H4V8.5ZM6 4.5H10C10 3.39543 9.10457 2.5 8 2.5C6.89543 2.5 6 3.39543 6 4.5ZM12 4.5C12 2.29086 10.2091 0.5 8 0.5C5.79086 0.5 4 2.29086 4 4.5L1 4.5C0.447715 4.5 0 4.94772 0 5.5V15.5C0 18.2614 2.23858 20.5 5 20.5H11C13.7614 20.5 16 18.2614 16 15.5V5.5C16 4.94772 15.5523 4.5 15 4.5H12Z"
-                                                        fill="white"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-    
-                            </div>
-                        </li>
-                    </ul>
-                    
-
-                </div>
-            </div>
-        </section>
+       
         <!-- Testimonials (v1) -->
         <section class="testimonial-section ">
             <div class="container">               

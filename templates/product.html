@@ -20,17 +20,17 @@
                                         class="img-center img-fluid">
                                 </a>
                                 <div class="search-icon">
-                                    <a  href="{% url 'productdetail' product.id %}">
+                                    <a  href="#">
                                         <img alt="Image placeholder" src="{% static 'img/ellipse.png' %}">
                                     </a>
                                     </div>
                             </div>
                             <div class="card-body pt-0">
-                                <h6><a class="t-black13" href="{% url 'productdetail' product.id %}">{{product.name}}</a></h6>
+                                <h6><a class="t-black13" href="#">{{product.name}}</a> <p class="card-price t-black15">{{product.price}}</p></h6>
                                 <p class="text-sm">
                                     Category:<span class="t-black"> {{product.category}}</span>
                                 </p>
-                                <p><span class="card-price t-black15">{{product.price}}</span></p>
+                                
                                 <div class="product-price mt-3">
                                     <a href="#"
                                         class="btn btn-sm btn-primary rounded-pill btn-icon  hover-translate-y-n3">

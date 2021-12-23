@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-
+import os
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_8gbu94fbkwwoo#^rj5p$f5tu_denpn&@c7^p^(j$oj0=y7b=@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -53,7 +54,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main.urls'
-
+# ecommerce-django.app.views
+# AUTHENTICATION_BACKENDS = ("ecommerce-django.app.models.Customer",)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -70,24 +72,24 @@ TEMPLATES = [
     },
 ]
 
+ 
+
 WSGI_APPLICATION = 'main.wsgi.application'
 
-
+LOGIN_URL = '/login/'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_admin',
-        'USER': 'user_admin',
-        'PASSWORD': 'mypass',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+DATABASES = {}
 
-
+# 'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'db_admin',
+#         'USER': 'user_admin',
+#         'PASSWORD': 'mypass',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -139,3 +141,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

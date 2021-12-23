@@ -1,7 +1,7 @@
 :root {
-    --yellow: #F6E32F;
-    --white: #ffffff;
-    --darkyellow: #5E8155;
+    --yellow: #9cbdc3 ;
+    --white: #fff;
+    --darkyellow: #F7F7F7;
 }
 .svg-color {
     fill: var(--green) !important;

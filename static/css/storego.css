@@ -400,7 +400,7 @@ color: #FFFFFF;
 #header-main {
     position: relative;
     height:69px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 #header-main nav{
     position: absolute;
@@ -896,17 +896,22 @@ footer .footer-content{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: space-between;
 }
 .featured-section ul .product-box{
-    flex: 0 0 20%;
-    max-width: 20%;
+    flex: 0 0 18%;
+    max-width: 18%;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 15px;
+    overflow: hidden;
 }
 .featured-section ul .product-box .btn-primary{
     padding: 10px 16px;
 }
 .categories-section{
     position: relative;
-    padding: 70px 0px 0px 0px;
+    padding: 70px 0px 70px 0px;
     background: transparent;
 }
 .categories-section .c-box{
@@ -1227,8 +1232,13 @@ footer .footer-content{
     letter-spacing: 0.01em;
     color: #151515;
     text-align: center;
+    margin: 0;
 }
-
+.card-body h6{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .product-box .card-product {
     box-shadow: unset;
     border-radius: 0px;
@@ -1254,7 +1264,7 @@ footer .footer-content{
 .product-box .product-price {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0px 15px;
 }
 
