@@ -88,7 +88,7 @@ systemd-python==234
 toml==0.10.2
 
 
-ufw==0.36
+
 unattended-upgrades==0.1
 urllib3==1.26.6
 usb-creator==0.3.7
