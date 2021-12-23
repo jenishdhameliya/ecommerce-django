@@ -5,9 +5,8 @@ from .views import Signup
 from .views import Login, logout
 from .views import Cart
 from .views import CheckOut
-from .views import OrderView
+from .views import OrderView,UserProfileView,product_detail,Blog
 from .middlewares.auth import auth_middleware
-from . import views
   
 urlpatterns = [
     path('', Index.as_view(), name='homepage'),
@@ -18,10 +17,10 @@ urlpatterns = [
     path('cart/', auth_middleware(Cart.as_view()), name='cart'),
     path('check-out/', CheckOut.as_view(), name='checkout'),
     path('orders/', auth_middleware(OrderView.as_view()), name='orders'),
-    path('about/', views.About, name='about'),
-    path('blog/', views.Blog, name='blog'),
-    path('productdetail/', views.product_detail, name='productdetail'),
-    path('profile/', views.UserProfileView, name='userprofile'),
+    path('about/', About, name='about'),
+    path('blog/', Blog, name='blog'),
+    path('productdetail/', product_detail, name='productdetail'),
+    path('profile/', UserProfileView.as_view(), name='userprofile'),
     
     
     
