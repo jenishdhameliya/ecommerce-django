@@ -126,7 +126,7 @@ class Signup (View):
         print("🚀 ~ file: views.py ~ line 126 ~ recaptcha_response", recaptcha_response)
         url = 'https://www.google.com/recaptcha/api/siteverify'
         values = {
-            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'secret': settings.RECAPTCHA_PUBLIC_KEY,
             'response': recaptcha_response
         }
         data = urllib.parse.urlencode(values).encode()
