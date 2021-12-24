@@ -111,7 +111,7 @@ def logout(request):
 class Signup (View):
     def get(self, request):
         return render(request, 'register.html')
-
+        
     def post(self, request):
 
         postData = request.POST
