@@ -133,9 +133,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-RECAPTCHA_PUBLIC_KEY = "6LeHucQdAAAAAInR7Yc26RNwS-TCh358qPp-K2I3"
+RECAPTCHA_PUBLIC_KEY = "6LfkkMQdAAAAANpnKN0YB1WOh27WnSmns_ji5R-l"
 
-RECAPTCHA_PRIVATE_KEY = "6LeHucQdAAAAAKByV3LrrosanaK4f6pXN460Zk5O"
+RECAPTCHA_PRIVATE_KEY = "6LfkkMQdAAAAAMes2QeFqCkWu1TEqhZYbivw1Pvc"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
