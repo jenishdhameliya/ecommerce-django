@@ -177,4 +177,18 @@
         });
         {% comment %} console.log("image is ::>>", "{{profile.profile_image.url | safe}}") {% endcomment %}
     </script>
+    <script>
+        window.onload = function() {
+            var $recaptcha = document.querySelector('#g-recaptcha-response');
+        
+            if($recaptcha) {
+                $recaptcha.setAttribute("required", "required");
+            }
+          const $form = document.querySelector('form');
+          $form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            console.log('prevented submit by code for demo');
+          });
+        };
+        </script>
 </html>
