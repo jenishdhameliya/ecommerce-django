@@ -113,7 +113,6 @@ class Signup (View):
         return render(request, 'register.html')
 
     def post(self, request):
-        print("655555555555556555555555565555555555555")
 
         postData = request.POST
         print('postdata', postData)
