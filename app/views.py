@@ -11,7 +11,9 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from .models import Products
 from .models import Category
 from django.views import View
-
+import json
+import urllib
+from django.conf import settings
 
 # Create your views here.
 class Index(View):
@@ -120,6 +122,18 @@ class Signup (View):
         phone = postData.get('phone')
         email = postData.get('email')
         password = postData.get('password')
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        print("🚀 ~ file: views.py ~ line 126 ~ recaptcha_response", recaptcha_response)
+        url = 'https://www.google.com/recaptcha/api/siteverify'
+        values = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        data = urllib.parse.urlencode(values).encode()
+        req =  urllib.request.Request(url, data=data)
+        response = urllib.request.urlopen(req)
+        result = json.loads(response.read().decode())
+        print("🚀 ~ file: views.py ~ line 135 ~ result", result)
         # validation
         value = {
             'first_name': first_name,
