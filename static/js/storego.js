@@ -69,4 +69,10 @@ $('#myCarousel').carousel({
      },300);
  });
 
+ $(document).ready(function() {
+
+   $('#recaptcha-token').attr('required' , true)
+
+  });
+
 
