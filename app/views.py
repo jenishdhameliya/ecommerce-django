@@ -9,7 +9,7 @@ from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from .models import Products
-from .models import Category
+from .models import Category, Team
 from django.views import View
 import json
 import urllib
@@ -123,7 +123,6 @@ class Signup (View):
         email = postData.get('email')
         password = postData.get('password')
         recaptcha_response = request.POST.get('g-recaptcha-response')
-        print("🚀 ~ file: views.py ~ line 126 ~ recaptcha_response", recaptcha_response)
         url = 'https://www.google.com/recaptcha/api/siteverify'
         values = {
             'secret': settings.RECAPTCHA_PRIVATE_KEY,
@@ -200,7 +199,7 @@ class CheckOut(View):
         customer = request.session.get('customer')
         cart = request.session.get('cart')
         products = Products.get_products_by_id(list(cart.keys()))
-        print(address, phone, customer, cart, products)
+        print("-----------------------", address, phone, customer, cart, products)
 
         for product in products:
             print(cart.get(str(product.id)))
@@ -278,3 +277,12 @@ class UserProfileView(TemplateView):
             print("Does Not Exist!")
 
         return redirect('home')
+
+
+class Teamview(TemplateView):
+    template_name = 'teams.html'
+    # extra_context={'users': YourModel.objects.all()}  #other way to pass context
+    def get_context_data(self,*args, **kwargs):
+        context = super(Teamview, self).get_context_data(*args,**kwargs)
+        context['teams'] = Team.objects.all()
+        return context

@@ -15397,7 +15397,7 @@ button.bg-black:hover {
 }
 
 .img-back-shape img {
-  background: url(../img/svg/backgrounds/bg-circles-1.svg) no-repeat scroll 50%/100% 100% border-box
+  background: url('../img/svg/backgrounds/bg-circles-1.svg') no-repeat scroll 50%/100% 100% border-box
 }
 
 .hover-opacity-0:hover,

@@ -94,7 +94,13 @@ class Order(models.Model):
     def get_orders_by_customer(customer_id):
         return Order.objects.filter(customer=customer_id).order_by('-date')
 
-
+class Team(models.Model):
+    name = models.CharField(max_length=150, blank=True)
+    role = models.CharField(max_length=500, blank=True)
+    photo = models.ImageField(upload_to='uploads/products/')
+    instagram  = models.URLField(max_length=500)  
+    linkedin = models.URLField(max_length=500)
+    github = models.URLField(max_length=500)
 
 
 

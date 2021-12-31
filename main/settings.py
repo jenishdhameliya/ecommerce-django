@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
 import os
 import os
@@ -76,26 +77,36 @@ TEMPLATES = [
 ]
 
 
-
-
 WSGI_APPLICATION = 'main.wsgi.application'
 
 LOGIN_URL = '/login/'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-import dj_database_url
 
+# PRODUCTION_ENVIORMENT = False
+# if PRODUCTION_ENVIORMENT:
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd908kkj27uqii9',
-        'USER': 'vsjehoaqkfihgf',
-        'PASSWORD': '7dcc2f212523720e8447048728daeab281ab66c41adcaa5951425aa597a10807',
-        'HOST': 'ec2-52-200-28-255.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd908kkj27uqii9',
+            'USER': 'vsjehoaqkfihgf',
+            'PASSWORD': '7dcc2f212523720e8447048728daeab281ab66c41adcaa5951425aa597a10807',
+            'HOST': 'ec2-52-200-28-255.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
     }
-}
+    
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'db_admin',
+#             'USER': 'user_admin',
+#             'PASSWORD': 'mypass',
+#             'HOST': 'localhost',
+#             'PORT': '5432',
+#         }
+#     }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -155,8 +166,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-CRISPY_TEMPLATE_PACK="bootstrap4"
+     
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Products
 from .models import Category
 from .models import Customer
-from .models import Order
+from .models import Order, Team
 
 
 class AdminProduct(admin.ModelAdmin):
@@ -19,3 +19,4 @@ admin.site.register(Products,AdminProduct)
 admin.site.register(Category)
 admin.site.register(Customer)
 admin.site.register(Order)
+admin.site.register(Team)
